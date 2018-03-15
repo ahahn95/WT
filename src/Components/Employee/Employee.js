@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Employee = ({firstName}) => {
+const Employee = () => {
     return (
 
-        <p>{firstName}</p>
+        <p>Hi</p>
     );
 };
 
-Employee.propTypes = {
-    firstName: PropTypes.string
-};
+// Employee.propTypes = {
+//     firstName: PropTypes.string
+// };
 
 export default Employee;

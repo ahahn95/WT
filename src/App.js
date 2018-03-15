@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import NameGame from "./Components/NameGame/NameGame";
+import Employee from "./Components/Employee/Employee";
 
 class App extends Component {
 
@@ -42,8 +43,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                {!!this.state.employeeList.length ? <NameGame employeeList={this.state.employeeList}/> : ''}
                 <div onClick={() => this.onPlayClick()}>Play</div>
+                {!!this.state.selectedList.length ? <NameGame selectedList={this.state.selectedList}/>: ''}
             </div>
         );
     }
