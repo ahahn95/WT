@@ -2,24 +2,31 @@ import React, {Component} from "react";
 import NameGame from "./Components/NameGame/NameGame";
 import "./App.css"
 
+const initialState = {
+    employeeList: [],
+    selectedList: [],
+    chosenEmployee: [],
+    counter: {
+        correct: 0,
+        incorrect: 0,
+        guessed: false
+    }
+};
+
 class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            employeeList: [],
-            selectedList: [],
-            chosenEmployee: [],
-            counter: {
-                correct: 0,
-                incorrect: 0,
-                guessed: false
-            }
-        };
+        this.state = initialState
 
         this.shuffle = this.shuffle.bind(this);
         this.setSelectedListAndChosenEmployee = this.setSelectedListAndChosenEmployee.bind(this);
         this.handleCounter = this.handleCounter.bind(this);
+        this.reset = this.reset.bind(this);
+    };
+
+    reset() {
+        this.setState(initialState)
     };
 
     onPlayClick() {
@@ -34,13 +41,15 @@ class App extends Component {
     };
 
     onPlayMattClick() {
+        this.reset();
         fetch("https://willowtreeapps.com/api/v1.0/profiles/")
             .then(response => response.json())
             .then(json => {
                 this.setState({
-                    employeeList: json.filter(person => person.firstName.toLowerCase() === 'matt')
+                    employeeList: json.filter(person => person.firstName.toLowerCase() === 'matthew')
                 });
-            });
+            })
+            .then(this.setSelectedListAndChosenEmployee);
     }
 
     setSelectedListAndChosenEmployee() {
