@@ -73,7 +73,7 @@ class App extends Component {
     };
 
     handleCounter(id) {
-        if(id == this.state.chosenEmployee.id) {
+        if(id === this.state.chosenEmployee.id) {
             this.setState({
                 counter: {
                     ...this.state.counter,
