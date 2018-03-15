@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Employee = () => {
+const Employee = ({data}) => {
     return (
-
-        <p>Hi</p>
+        <span>
+            <img src={data.headshot.url} width="100px"/>
+        </span>
     );
 };
 
-// Employee.propTypes = {
-//     firstName: PropTypes.string
-// };
+Employee.propTypes = {
+    data: PropTypes.string
+};
 
 export default Employee;
