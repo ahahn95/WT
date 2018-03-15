@@ -30,6 +30,7 @@ class App extends Component {
     };
 
     onPlayClick() {
+        this.reset();
         fetch("https://willowtreeapps.com/api/v1.0/profiles/")
             .then(response => response.json())
             .then(json => {

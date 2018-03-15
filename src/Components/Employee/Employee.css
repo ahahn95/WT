@@ -5,22 +5,8 @@
     margin: 1%;
 }
 
-.ImgWrapper.chosen {
-    background: green;
-    margin: 0px;
-}
-
-.ImgWrapper.notChosen {
-    background: red;
-    margin: 0px;
-}
-
-.clicked.chosen {
-    opacity: 0.5;
-}
-
-.clicked.notChosen {
-    opacity: 0.5
+.EmployeeContainer img {
+    width: 100%;
 }
 
 .centered {
@@ -58,4 +44,8 @@
     color: white;
     font-weight: bold;
     text-align: center;
+}
+
+.div {
+    display: inline;
 }
