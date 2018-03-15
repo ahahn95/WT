@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Employee = ({data}) => {
+const Employee = ({data, handleEmployeeClick}) => {
     return (
         <span>
-            <img src={data.headshot.url} width="100px"/>
+            <img onClick={() => handleEmployeeClick(data.id)} src={data.headshot.url} width="100px"/>
         </span>
     );
 };
 
 Employee.propTypes = {
-    data: PropTypes.object
+    data: PropTypes.object,
+    handleEmployeeClick: PropTypes.func
 };
 
 export default Employee;

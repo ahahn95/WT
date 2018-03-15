@@ -15,6 +15,7 @@ class App extends Component {
         this.componentWillMount = this.componentWillMount.bind(this);
         this.shuffle = this.shuffle.bind(this);
         this.getChosenEmployee = this.getChosenEmployee.bind(this);
+        this.handleEmployeeClick = this.handleEmployeeClick.bind(this);
     }
 
     componentWillMount() {
@@ -50,6 +51,14 @@ class App extends Component {
     };
 
 
+    handleEmployeeClick(id) {
+        if(id == this.state.chosenEmployee.id) {
+            console.log("yes")
+        } else {
+            console.log("not no");
+        }
+    }
+
     render() {
         return (
             <div className="App">
@@ -58,6 +67,7 @@ class App extends Component {
                     <NameGame
                         chosenEmployee={this.state.chosenEmployee}
                         selectedList={this.state.selectedList}
+                        handleEmployeeClick={this.handleEmployeeClick}
                     />: ''}
             </div>
         );

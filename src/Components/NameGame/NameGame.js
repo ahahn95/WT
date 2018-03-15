@@ -1,14 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Employee from "../Employee/Employee";
 import Name from "../Name/Name";
 
-const NameGame = ({selectedList, chosenEmployee}) => {
+const NameGame = ({selectedList, chosenEmployee, handleEmployeeClick}) => {
     return (
         <div>
             <Name chosenEmployee={chosenEmployee}/>
             {selectedList.map(employee => {
-                return <Employee key={employee.id} data={employee}/>
+                return <Employee
+                    key={employee.id}
+                    data={employee}
+                    handleEmployeeClick={handleEmployeeClick}
+                />
             })}
         </div>
     );
@@ -16,7 +20,8 @@ const NameGame = ({selectedList, chosenEmployee}) => {
 
 NameGame.propTypes = {
     selectedList: PropTypes.array,
-    chosenEmployee: PropTypes.object
+    chosenEmployee: PropTypes.object,
+    handleEmployeeClick: PropTypes.func
 };
 
 export default NameGame;
