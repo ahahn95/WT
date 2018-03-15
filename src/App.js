@@ -1,34 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import Employee from "./Components/Employee/Employee";
+import React, { Component } from "react";
 import NameGame from "./Components/NameGame/NameGame";
 
 class App extends Component {
 
-  constructor(props) {
+  constructor ( props ) {
     super(props);
     this.state = {
-        employeeList: []
+      employeeList: [],
+      selectedList: []
     };
 
     this.componentWillMount = this.componentWillMount.bind(this);
   }
 
-  componentWillMount() {
-      fetch('https://willowtreeapps.com/api/v1.0/profiles/')
-          .then(response => response.json())
-          .then(json => {
-              this.setState({
-                  employeeList: json
-              });
-          });
+  componentWillMount () {
+    fetch("https://willowtreeapps.com/api/v1.0/profiles/").then(response => response.json()).then(json => {
+      this.setState({
+        employeeList: json
+      });
+    });
+  };
+
+  setSelectedEmployees() {
+
   }
 
-  render() {
+
+  render () {
     return (
       <div className="App">
-          <NameGame/>
-          { this.state.employeeList.length > 0 ?  console.log(this.state.employeeList[0].firstName): '' }
+        {!!this.state.employeeList.length ? <NameGame employeeList={this.state.employeeList}/> : ''}
       </div>
     );
   }
