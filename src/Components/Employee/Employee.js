@@ -27,14 +27,15 @@ class Employee extends Component {
 
     render() {
         return (
-            <span className={"EmployeeContainer" + " " + (this.state.clicked)}>
-                <img
+            <span className="EmployeeContainer">
+                <img className={(this.state.clicked ? "clicked " : "") +
+                                (this.props.chosen ? "chosen" : "notChosen")}
                     onClick={() => this.handleClick()}
                     src={this.props.data.headshot.url}
                     width="100px"
                     alt={this.props.data.headshot.alt}
                 />
-                <span className="centered">
+                <span className={"centered " + (this.state.clicked ? "clicked " : "")}>
                     {this.props.data.firstName} {this.props.data.lastName}
                 </span>
             </span>
@@ -57,7 +58,8 @@ class Employee extends Component {
 //
 Employee.propTypes = {
     data: PropTypes.object,
-    handleEmployeeClick: PropTypes.func
+    handleEmployeeClick: PropTypes.func,
+    chosen: PropTypes.bool
 };
 
 

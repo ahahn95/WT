@@ -9,6 +9,7 @@ const NameGame = ({selectedList, chosenEmployee, handleEmployeeClick}) => {
             <Name chosenEmployee={chosenEmployee}/>
             {selectedList.map(employee => {
                 return <Employee
+                    chosen={chosenEmployee.id === employee.id}
                     key={employee.id}
                     data={employee}
                     handleEmployeeClick={handleEmployeeClick}

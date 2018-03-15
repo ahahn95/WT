@@ -4,15 +4,28 @@
     padding: 10px;
 }
 
-.true {
+.clicked.chosen {
     opacity: 0.3;
 }
 
+.clicked.notChosen {
+}
+
 .centered {
+    display:none;
+}
+
+.centered.clicked {
+    opacity: 1;
+    display: block;
     position: absolute;
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Open Sans';
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
 
 .div {
