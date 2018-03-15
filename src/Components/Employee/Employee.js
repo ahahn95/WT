@@ -10,7 +10,7 @@ const Employee = ({data}) => {
 };
 
 Employee.propTypes = {
-    data: PropTypes.string
+    data: PropTypes.object
 };
 
 export default Employee;
