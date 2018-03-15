@@ -13,7 +13,7 @@ class Employee extends Component {
     }
 
     getClass() {
-        if (this.state.clicked == true) {
+        if (this.state.clicked === true) {
             return "clicked";
         }
         ;
