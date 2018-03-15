@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import NameGame from "./Components/NameGame/NameGame";
-import Employee from "./Components/Employee/Employee";
 
 class App extends Component {
 
@@ -15,7 +14,7 @@ class App extends Component {
         this.componentWillMount = this.componentWillMount.bind(this);
         this.shuffle = this.shuffle.bind(this);
         this.getChosenEmployee = this.getChosenEmployee.bind(this);
-        this.handleEmployeeClick = this.handleEmployeeClick.bind(this);
+        // this.handleEmployeeClick = this.handleEmployeeClick.bind(this);
     }
 
     componentWillMount() {
@@ -40,8 +39,6 @@ class App extends Component {
         return Math.floor(Math.random() * 5);
     };
 
-
-
     shuffle(input) {
         for (let i = input.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -49,15 +46,15 @@ class App extends Component {
         };
         return input;
     };
-
-
-    handleEmployeeClick(id) {
-        if(id == this.state.chosenEmployee.id) {
-            console.log("yes")
-        } else {
-            console.log("not no");
-        }
-    }
+    //
+    //
+    // handleEmployeeClick(id) {
+    //     if(id === this.state.chosenEmployee.id) {
+    //
+    //     } else {
+    //         console.log("no");
+    //     }
+    // }
 
     render() {
         return (
