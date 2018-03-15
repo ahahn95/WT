@@ -1,0 +1,9 @@
+* {
+    font-family: "Open Sans"
+}
+
+div span {
+    display: flex;
+    justify-content: center;
+}
+

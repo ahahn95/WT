@@ -1,7 +1,8 @@
-.EmployeeContainer{
+.EmployeeContainer {
     position: relative;
     display: inline-block;
-    padding: 10px;
+    width: 18%;
+    margin: 1%;
 }
 
 .ImgWrapper.chosen {
@@ -24,6 +25,26 @@
 
 .centered {
     display:none;
+}
+
+.mask.clicked.chosen {
+    position: absolute;
+    opacity: 0.5;
+    background: green;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.mask.clicked.notChosen {
+    position: absolute;
+    opacity: 0.5;
+    background: red;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
 }
 
 .centered.clicked {
