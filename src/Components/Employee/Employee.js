@@ -32,9 +32,11 @@ class Employee extends Component {
                                 (this.props.chosen ? "chosen" : "notChosen")}
                     onClick={() => this.handleClick()}
                     src={this.props.data.headshot.url}
-                    width="100px"
                     alt={this.props.data.headshot.alt}
                 />
+                <span className={"mask " +
+                                (this.state.clicked ? "clicked " : "") +
+                            (this.props.chosen ? "chosen" : "notChosen")}></span>
                 <span className={"centered " + (this.state.clicked ? "clicked " : "")}>
                     {this.props.data.firstName} {this.props.data.lastName}
                 </span>

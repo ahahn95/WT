@@ -1,18 +1,47 @@
 .EmployeeContainer{
     position: relative;
     display: inline-block;
-    padding: 10px;
+    width: 20%;
+}
+.EmployeeContainer img{
+    width: 100%;
 }
 
-.clicked.chosen {
-    opacity: 0.3;
-}
+/*img.clicked.chosen {*/
+    /*position: absolute;*/
+    /*opacity: 0.5;*/
+    /*background: green;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*top: 0px;*/
+    /*left: 0px;*/
+/*}*/
 
 .clicked.notChosen {
 }
 
 .centered {
     display:none;
+}
+
+.mask.clicked.chosen{
+    position: absolute;
+    opacity: 0.5;
+    background: green;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.mask.clicked.notChosen{
+    position: absolute;
+    opacity: 0.5;
+    background: red;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
 }
 
 .centered.clicked {
