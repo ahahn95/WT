@@ -20,7 +20,7 @@ class App extends Component {
         this.shuffle = this.shuffle.bind(this);
         this.setSelectedListAndChosenEmployee = this.setSelectedListAndChosenEmployee.bind(this);
         this.handleCounter = this.handleCounter.bind(this);
-    }
+    };
 
     onPlayClick() {
         fetch("https://willowtreeapps.com/api/v1.0/profiles/")
@@ -32,6 +32,16 @@ class App extends Component {
             })
             .then(this.setSelectedListAndChosenEmployee);
     };
+
+    onPlayMattClick() {
+        fetch("https://willowtreeapps.com/api/v1.0/profiles/")
+            .then(response => response.json())
+            .then(json => {
+                this.setState({
+                    employeeList: json.filter(person => person.firstName.toLowerCase() === 'matt')
+                });
+            });
+    }
 
     setSelectedListAndChosenEmployee() {
         let tempSelectedList = this.shuffle(this.state.employeeList).slice(0,5)
@@ -60,22 +70,22 @@ class App extends Component {
                     ...this.state.counter,
                     correct: this.state.counter.correct + 1
                 }
-            })
+            });
         } else {
             this.setState({
                 counter: {
                     ...this.state.counter,
                     incorrect: this.state.counter.incorrect + 1
                 }
-            })
-        }
-
-    }
+            });
+        };
+    };
 
     render() {
         return (
             <div className="App">
                 <div onClick={() => this.onPlayClick()}>Play</div>
+                <div onClick={() => this.onPlayMattClick()}>Matt</div>
                 <div>
                     <span>Correct: {this.state.counter.correct} </span>
                     <span>Incorrect: {this.state.counter.incorrect}</span>
@@ -90,6 +100,6 @@ class App extends Component {
             </div>
         );
     };
-}
+};
 
 export default App;

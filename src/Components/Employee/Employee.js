@@ -26,7 +26,6 @@ class Employee extends Component {
         this.props.handleCounter(this.props.data.id);
     };
 
-
     render() {
         return (
             <span className="EmployeeContainer">
@@ -44,7 +43,7 @@ class Employee extends Component {
                     {this.props.data.firstName} {this.props.data.lastName}
                 </span>
             </span>
-        )
+        );
     };
 };
 

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Employee from "../Employee/Employee";
 import Name from "../Name/Name";
-import "./NameGame.css"
 
 const NameGame = ({selectedList, chosenEmployee, handleCounter}) => {
     return (
@@ -14,8 +13,7 @@ const NameGame = ({selectedList, chosenEmployee, handleCounter}) => {
                         chosen={chosenEmployee.id === employee.id}
                         key={employee.id}
                         data={employee}
-                        handleCounter={handleCounter}
-                    />
+                        handleCounter={handleCounter}/>
                 })}
             </div>
         </div>
