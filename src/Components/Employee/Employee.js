@@ -23,7 +23,9 @@ class Employee extends Component {
         this.setState({
             clicked: true
         });
+        this.props.handleCounter(this.props.data.id);
     };
+
 
     render() {
         return (
@@ -35,33 +37,22 @@ class Employee extends Component {
                     alt={this.props.data.headshot.alt}
                 />
                 <span className={"mask " +
-                                (this.state.clicked ? "clicked " : "") +
-                            (this.props.chosen ? "chosen" : "notChosen")}></span>
+                            (this.state.clicked ? "clicked " : "") +
+                            (this.props.chosen ? "chosen" : "notChosen")}>
+                </span>
                 <span className={"centered " + (this.state.clicked ? "clicked " : "")}>
                     {this.props.data.firstName} {this.props.data.lastName}
                 </span>
             </span>
         )
-    }
-}
+    };
+};
 
-// const Employee = ({data, handleEmployeeClick}) => {
-//     return (
-//         {/*<span>*/}
-//             {/*<img*/}
-//                 {/*onClick={() => handleEmployeeClick(data.id)}*/}
-//                 {/*src={data.headshot.url}*/}
-//                 {/*width="100px"*/}
-//                 {/*alt={data.headshot.alt}*/}
-//             {/*/>*/}
-//         {/*</span>*/}
-//     );
-// };
-//
 Employee.propTypes = {
     data: PropTypes.object,
     handleEmployeeClick: PropTypes.func,
-    chosen: PropTypes.bool
+    chosen: PropTypes.bool,
+    handleCounter: PropTypes.func
 };
 
 

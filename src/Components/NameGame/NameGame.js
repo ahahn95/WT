@@ -4,7 +4,7 @@ import Employee from "../Employee/Employee";
 import Name from "../Name/Name";
 import "./NameGame.css"
 
-const NameGame = ({selectedList, chosenEmployee, handleEmployeeClick}) => {
+const NameGame = ({selectedList, chosenEmployee, handleCounter}) => {
     return (
         <div>
             <Name chosenEmployee={chosenEmployee}/>
@@ -14,7 +14,7 @@ const NameGame = ({selectedList, chosenEmployee, handleEmployeeClick}) => {
                         chosen={chosenEmployee.id === employee.id}
                         key={employee.id}
                         data={employee}
-                        handleEmployeeClick={handleEmployeeClick}
+                        handleCounter={handleCounter}
                     />
                 })}
             </div>
@@ -25,7 +25,7 @@ const NameGame = ({selectedList, chosenEmployee, handleEmployeeClick}) => {
 NameGame.propTypes = {
     selectedList: PropTypes.array,
     chosenEmployee: PropTypes.object,
-    handleEmployeeClick: PropTypes.func
+    handleCounter: PropTypes.func
 };
 
 export default NameGame;
