@@ -30,6 +30,7 @@ class App extends Component {
     };
 
     onPlayClick() {
+        this.reset();
         fetch("https://willowtreeapps.com/api/v1.0/profiles/")
             .then(response => response.json())
             .then(json => {
@@ -73,7 +74,7 @@ class App extends Component {
     };
 
     handleCounter(id) {
-        if(id == this.state.chosenEmployee.id) {
+        if(id === this.state.chosenEmployee.id) {
             this.setState({
                 counter: {
                     ...this.state.counter,
